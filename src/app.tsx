@@ -1,5 +1,5 @@
-function App() {
-  return <>example</>;
-}
+import { Router } from './router';
 
-export default App;
+export const App = () => {
+  return <Router />;
+};
