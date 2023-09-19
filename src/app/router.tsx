@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { HashRouter } from 'react-router-dom';
 
-import { IndexPage } from './pages/index';
+import { IndexPage } from '../pages/index';
 
 export const RouteMap = {
   ROOT: '/',

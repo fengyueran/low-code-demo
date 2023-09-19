@@ -1,18 +1,35 @@
 import { Button } from 'antd';
 import styled from 'styled-components';
 
-const Container = styled.button`
-  width: 200px;
-  height: 200px;
+const Container = styled.div`
   margin-top: 200px;
 `;
 
-export const Counter = () => {
+const Row = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+interface Props {
+  value: number;
+  increment: () => void;
+  decrement: () => void;
+}
+
+export const Counter = (props: Props) => {
+  const { value, increment, decrement } = props;
   return (
     <Container>
-      <Button type="primary">-</Button>
-      <Button type="primary">+</Button>
-      <div>value</div>
+      <div>{value}</div>
+      <Row>
+        <Button type="primary" onClick={decrement}>
+          -
+        </Button>
+        <div style={{ marginRight: 10 }} />
+        <Button type="primary" onClick={increment}>
+          +
+        </Button>
+      </Row>
     </Container>
   );
 };
